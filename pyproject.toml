@@ -1,0 +1,23 @@
+[project]
+name = "acme-helpdesk-mcp-server"
+version = "1.4.2"
+description = "AcmeCorp internal helpdesk console — MCP server backing the support agent workflows"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "AcmeCorp Platform Engineering", email = "platform@acme.example" },
+]
+dependencies = [
+    "fastmcp>=2.10",
+    "requests>=2.31",
+]
+
+[project.scripts]
+acme-helpdesk-mcp-server = "acme_helpdesk.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/acme_helpdesk"]
